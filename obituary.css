@@ -6,7 +6,7 @@
     font-style: normal;
 }
 
-/* 重設默認樣式 */
+/* 重设默认样式 */
 * {
     margin: 0;
     padding: 0;
@@ -23,7 +23,7 @@ body {
     line-height: 1.8;
 }
 
-/* 頁眉設計 */
+/* 页眉设计 */
 header {
     text-align: center;
     background-color: #FFF;
@@ -32,7 +32,7 @@ header {
 }
 
 header .logo {
-    max-width: 60px; /* 縮小Logo */
+    max-width: 60px; /* 缩小Logo */
     margin-bottom: 15px;
 }
 
@@ -42,7 +42,7 @@ header p {
     margin: 0;
 }
 
-/* 主要內容設計 */
+/* 主要内容设计 */
 main {
     padding: 20px;
     max-width: 800px;
@@ -52,7 +52,7 @@ main {
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* 圖片區塊設計 */
+/* 图片区域设计 */
 .main-photo-section {
     text-align: center;
     margin-bottom: 20px;
@@ -79,7 +79,7 @@ main {
     text-align: justify;
 }
 
-/* 標語區塊 */
+/* 标语区域 */
 .motto {
     text-align: center;
     font-family: 'Cormorant Garamond', serif;
@@ -89,7 +89,7 @@ main {
     font-style: italic;
 }
 
-/* 訃聞區塊設計 */
+/* 讣闻区域设计 */
 .paper-obituary-section {
     text-align: center;
     margin-bottom: 20px;
@@ -115,7 +115,7 @@ main {
     transform: scale(1.05);
 }
 
-/* 時間軸設計 */
+/* 时间轴设计 */
 #timeline {
     margin-top: 50px;
 }
@@ -193,7 +193,7 @@ main {
     color: #8B4513;
 }
 
-/* Slideshow container */
+/* 幻灯片容器 */
 .slideshow-container {
     position: relative;
     max-width: 100%;
@@ -225,7 +225,7 @@ main {
     to { opacity: 1; }
 }
 
-/* Next & previous buttons */
+/* 下一页 & 上一页按钮 */
 .prev, .next {
     cursor: pointer;
     position: absolute;
@@ -255,7 +255,7 @@ main {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* 留言區塊設計 */
+/* 留言区块设计 */
 #comments-section {
     margin-top: 50px;
     padding: 20px;
@@ -335,172 +335,283 @@ main {
 }
 
 #comments-container .comment .author {
+    #comments-container .comment .author {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 16px;
-    color: #2C2C2C;
     font-weight: bold;
+    color: #2C2C2C;
     margin-bottom: 5px;
-}
-
-#comments-container .comment .date {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 14px;
-    color: #888;
-    margin-bottom: 10px;
 }
 
 #comments-container .comment .text {
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     color: #5A5A5A;
+    line-height: 1.6;
 }
 
-#comments-container .comment .edit,
-#comments-container .comment .delete {
+#comments-container .comment .time {
+    font-size: 12px;
+    color: #8B4513;
     position: absolute;
     top: 10px;
     right: 10px;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 14px;
-    color: #8B4513;
-    cursor: pointer;
-    transition: color 0.3s ease;
 }
 
-#comments-container .comment .edit:hover,
-#comments-container .comment .delete:hover {
+#comments-container .comment .edit-btn,
+#comments-container .comment .delete-btn {
+    font-size: 12px;
+    color: #8B4513;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-left: 10px;
+}
+
+#comments-container .comment .edit-btn:hover,
+#comments-container .comment .delete-btn:hover {
     color: #A0522D;
 }
 
-/* 花籃展示 */
-#flower-basket-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-#flower-basket-gallery .flower-basket-item {
-    width: 48%;
-    text-align: center;
-}
-
-#flower-basket-gallery .flower-basket-item img {
-    width: 100%;
-    max-width: 160px;
-    margin: 0 auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.4s ease;
-}
-
-#flower-basket-gallery .flower-basket-item img:hover {
-    transform: scale(1.05);
-}
-/* 音樂區塊 */
-.music-section {
-    display: none; /* 隱藏音樂控制 */
-}
-
-/* 頁腳設計 */
+/* 底部设计 */
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 20px 0;
     background-color: #FFF;
     border-top: 1px solid #EDEDED;
 }
 
 footer p {
-    font-family: 'CustomFont', Arial, Helvetica, sans-serif; /* 使用手写体字体 */
-    font-size: 16px;
-    color: #2C2C2C;
+    font-family: 'CustomFont', Arial, sans-serif;
+    font-size: 14px;
+    color: #8B4513;
     margin: 0;
+    line-height: 1.8;
 }
 
-/* 版面調整 */
-@media (max-width: 768px) {
-    header .logo {
-        max-width: 50px;
+/* 音乐播放器 */
+#background-music {
+    display: none; /* 隐藏音乐播放器 */
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 768px) {
+    main {
+        padding: 15px;
+    }
+
+    .main-photo-section img {
+        max-width: 100%;
     }
 
     .paper-obituary-section img {
-        max-width: 90%;
+        max-width: 100%;
     }
 
-    #timeline .events-header,
-    #timeline .events-body,
-    .motto,
-    #comments-section h2,
-    .flower-basket-section h2 {
+    #timeline h2 {
+        font-size: 22px;
+    }
+
+    .VivaTimeline dt,
+    .VivaTimeline dd {
+        margin-left: 40px;
+    }
+
+    .VivaTimeline dd .circ {
+        left: -40px;
+    }
+
+    .VivaTimeline dd .time {
+        left: -65px;
+    }
+
+    .prev, .next {
         font-size: 16px;
     }
 
-    #comment-form input,
-    #comment-form textarea {
-        font-size: 14px;
-    }
-
-    #comment-form button {
-        font-size: 14px;
-    }
-
-    .main-photo-section img,
-    .paper-obituary-section img {
-        width: 100%;
-    }
-}
-
-@media (max-width: 480px) {
-    .motto {
-        font-size: 14px;
-    }
-
-    #comment-form input,
-    #comment-form textarea {
-        font-size: 12px;
-    }
-
-    #comment-form button {
+    footer p {
         font-size: 12px;
     }
 }
 
-@media (max-width: 768px) {
-    .prev, .next {
-        font-size: 14px;
-        padding: 12px;
-    }
+/* 链接样式 */
+a {
+    color: #8B4513;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-/* 響應式設計 */
-@media (max-width: 768px) {
-    body {
-        font-size: 14px;
-    }
+a:hover {
+    color: #A0522D;
+}
 
-    header, footer {
-        padding: 15px;
-    }
+/* 表单样式 */
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+    color: #333333;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
 
-    main {
-        padding: 15px;
-        margin: 15px auto;
-    }
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form textarea:focus {
+    border-color: #A0522D;
+    box-shadow: 0 0 5px rgba(160, 82, 45, 0.5);
+    outline: none;
+}
 
-    #flower-basket-gallery .flower-basket-item {
-        width: 100%;
-    }
+form input[type="submit"] {
+    background-color: #8B4513;
+    color: #FFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'Source Sans Pro', sans-serif;
+    transition: background-color 0.3s ease;
+}
 
-    #flower-basket-gallery .flower-basket-item img {
-        max-width: 120px;
-    }
+form input[type="submit"]:hover {
+    background-color: #A0522D;
+}
 
-    img {
-        border-radius: 10px;
-    }
+/* 表单容器 */
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #FFF;
+    border: 1px solid #EDEDED;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-    .business-card {
-        width: 150px; /* 調整響應式的名片寬度 */
-    }
+/* 花籃區域 */
+.flower-section {
+    padding: 20px;
+    background-color: #FFF;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
+.flower-section h2 {
+    font-family: 'CustomFont', Arial, sans-serif;
+    font-size: 22px;
+    color: #8B4513;
+    margin-bottom: 15px;
+}
+
+.flower-section .flower-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.flower-section .flower-item img {
+    width: 80px;
+    height: auto;
+    margin-right: 15px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.flower-section .flower-item p {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+    color: #333333;
+    margin: 0;
+}
+
+.flower-section .flower-item .price {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #8B4513;
+    margin-left: auto;
+}
+
+/* 演出部分 */
+.perform-section {
+    padding: 20px;
+    background-color: #FFF;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.perform-section h2 {
+    font-family: 'CustomFont', Arial, sans-serif;
+    font-size: 22px;
+    color: #8B4513;
+    margin-bottom: 15px;
+}
+
+.perform-section p {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+    color: #333333;
+    line-height: 1.8;
+}
+
+/* 小工具样式 */
+.widget {
+    padding: 15px;
+    background-color: #FFF;
+    border-radius: 8px;
+    margin: 15px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.widget h3 {
+    font-family: 'CustomFont', Arial, sans-serif;
+    font-size: 18px;
+    color: #8B4513;
+    margin-bottom: 10px;
+}
+
+.widget p {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+    color: #333333;
+    line-height: 1.6;
+}
+
+/* 通知样式 */
+.notification {
+    padding: 15px;
+    background-color: #FFF3CD;
+    border: 1px solid #FFEEBA;
+    border-radius: 4px;
+    margin: 15px 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+    color: #856404;
+}
+
+/* 浮动动作按钮 */
+.floating-action-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #8B4513;
+    color: #FFF;
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.floating-action-button:hover {
+    background-color: #A0522D;
+    transform: scale(1.1);
+}
