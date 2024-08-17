@@ -1,4 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
+            // Timeline animation
+        function animateTimeline() {
+            const timelineBlocks = document.querySelectorAll(".VivaTimeline .event");
+            timelineBlocks.forEach(function (block) {
+                const rect = block.getBoundingClientRect();
+                if (rect.top <= window.innerHeight * 0.75 && rect.bottom >= 0) {
+                    block.classList.add("animated");
+                } else {
+                    block.classList.remove("animated");
+                }
+            });
+        }
     // 背景音乐自动播放
     const backgroundMusic = document.getElementById('background-music');
     if (backgroundMusic) {
