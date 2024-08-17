@@ -330,133 +330,145 @@ main {
     background-color: #FFF;
     border: 1px solid #EEE;
     border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0,0, 0.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     position: relative;
 }
 
 #comments-container .comment .author {
-    font-weight: bold;
-    color: #2C2C2C;
-}
-
-#comments-container .comment .timestamp {
-    font-size: 14px;
-    color: #999;
-}
-
-#comments-container .comment .content {
-    margin-top: 10px;
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 16px;
-    color: #333;
+    color: #2C2C2C;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
-#comments-container .comment .edit-button,
-#comments-container .comment .delete-button {
+#comments-container .comment .date {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+#comments-container .comment .text {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    color: #5A5A5A;
+}
+
+#comments-container .comment .edit,
+#comments-container .comment .delete {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 14px;
     color: #8B4513;
     cursor: pointer;
-    margin-right: 10px;
+    transition: color 0.3s ease;
 }
 
-#comments-container .comment .edit-button:hover,
-#comments-container .comment .delete-button:hover {
+#comments-container .comment .edit:hover,
+#comments-container .comment .delete:hover {
     color: #A0522D;
 }
 
 /* Flower basket section */
 .flower-basket-section {
-    text-align: center;
     margin-top: 50px;
+    padding: 20px;
+    background-color: #F8F8F8;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
 }
 
 .flower-basket-section h2 {
+    font-family: 'Lora', serif;
     font-size: 24px;
     color: #2C2C2C;
     margin-bottom: 20px;
 }
 
-.flower-basket-section .flower-basket {
-    display: inline-block;
-    text-align: left;
-    background-color: #FFF;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    margin: 10px;
-    transition: transform 0.3s ease;
-}
-
-.flower-basket-section .flower-basket img {
-    width: 100%;
-    max-width: 300px;
-    border-radius: 10px;
-}
-
-.flower-basket-section .flower-basket p {
-    margin-top: 10px;
+.flower-basket-section button {
+    padding: 10px 20px;
     font-size: 16px;
-    color: #5A5A5A;
-}
-
-.flower-basket-section .flower-basket:hover {
-    transform: scale(1.05);
-}
-
-/* 音樂設置 */
-audio {
-    display: none; /* 隱藏音樂控制 */
-}
-
-/* 視覺效果及修正 */
-a {
-    color: #8B4513;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: #A0522D;
-}
-
-/* 註釋區域的樣式 */
-.comment-section {
-    margin: 20px 0;
-}
-
-.comment-section textarea {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #DDD;
-    font-size: 16px;
-    margin-bottom: 10px;
-    resize: vertical;
-}
-
-.comment-section button {
+    font-family: 'Source Sans Pro', sans-serif;
     background-color: #8B4513;
     color: #FFF;
     border: none;
-    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.comment-section button:hover {
+.flower-basket-section button:hover {
     background-color: #A0522D;
 }
 
-/* 網頁底部設計 */
+/* 音樂區塊 */
+.music-section {
+    display: none; /* 隱藏音樂控制 */
+}
+
+/* 頁腳設計 */
 footer {
     text-align: center;
-    padding: 20px 0;
+    padding: 20px;
     background-color: #FFF;
     border-top: 1px solid #EDEDED;
-    font-family: 'CustomFont', Arial, Helvetica, sans-serif;
 }
 
 footer p {
+    font-family: 'CustomFont', Arial, Helvetica, sans-serif; /* 使用手写体字体 */
     font-size: 16px;
-    color: #5A5A5A;
+    color: #2C2C2C;
+    margin: 0;
+}
+
+/* 版面調整 */
+@media (max-width: 768px) {
+    header .logo {
+        max-width: 50px;
+    }
+
+    .paper-obituary-section img {
+        max-width: 90%;
+    }
+
+    #timeline .events-header,
+    #timeline .events-body,
+    .motto,
+    #comments-section h2,
+    .flower-basket-section h2 {
+        font-size: 16px;
+    }
+
+    #comment-form input,
+    #comment-form textarea {
+        font-size: 14px;
+    }
+
+    #comment-form button {
+        font-size: 14px;
+    }
+
+    .main-photo-section img,
+    .paper-obituary-section img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .motto {
+        font-size: 14px;
+    }
+
+    #comment-form input,
+    #comment-form textarea {
+        font-size: 12px;
+    }
+
+    #comment-form button {
+        font-size: 12px;
+    }
 }
