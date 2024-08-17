@@ -472,3 +472,10 @@ footer p {
         font-size: 12px;
     }
 }
+
+@media (max-width: 768px) {
+    .prev, .next {
+        font-size: 14px;
+        padding: 12px;
+    }
+}
