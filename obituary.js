@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // 背景音乐自动播放
     const backgroundMusic = document.getElementById('background-music');
-
     if (backgroundMusic) {
         backgroundMusic.muted = false; // 确保音乐未被静音
         backgroundMusic.play().catch(error => {
@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-
+    // 幻灯片功能
     let slideIndex = 0;
     showSlides();
 
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         slideIndex++;
         if (slideIndex > slides.length) { slideIndex = 1 }    
         slides[slideIndex-1].style.display = "block";  
-        setTimeout(showSlides, 4000); // Change image every 4 seconds
+        setTimeout(showSlides, 4000); // 每4秒更换幻灯片
     }
 
     function plusSlides(n) {
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
 
             commentsContainer.appendChild(newComment);
-            commentForm.reset(); // 重置表單
+            commentForm.reset(); // 重置表单
 
             // 添加删除功能
             newComment.querySelector('.delete-comment').addEventListener('click', function() {
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // 花籃展示功能
+    // 花篮展示功能
     const flowerBasketsButton = document.getElementById('show-flower-baskets');
     const flowerBasketGallery = document.getElementById('flower-basket-gallery');
 
