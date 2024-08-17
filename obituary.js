@@ -1,24 +1,13 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // 背景音樂自動播放
+document.addEventListener('DOMContentLoaded', function() {
     const backgroundMusic = document.getElementById('background-music');
+
     if (backgroundMusic) {
+        backgroundMusic.muted = false; // 确保音乐未被静音
         backgroundMusic.play().catch(error => {
             console.log("音樂自動播放被阻止:", error);
-            // 提示用户手动播放音乐
-            const playButton = document.createElement('button');
-            playButton.innerText = "點擊播放音樂";
-            playButton.style.position = 'fixed';
-            playButton.style.top = '10px';
-            playButton.style.right = '10px';
-            playButton.style.zIndex = 1000;
-            document.body.appendChild(playButton);
-
-            playButton.addEventListener('click', function() {
-                backgroundMusic.play();
-                playButton.remove();
-            });
         });
     }
+
 
     let slideIndex = 0;
     showSlides();
