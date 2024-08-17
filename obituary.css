@@ -203,12 +203,11 @@ main {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Hide the images by default */
 .mySlides {
     display: none;
+    width: 100%;
 }
 
-/* Fading animation */
 .fade {
     -webkit-animation-name: fade;
     -webkit-animation-duration: 1.5s;
@@ -217,13 +216,13 @@ main {
 }
 
 @-webkit-keyframes fade {
-    from {opacity: .4} 
-    to {opacity: 1}
+    from { opacity: .4; }
+    to { opacity: 1; }
 }
 
 @keyframes fade {
-    from {opacity: .4} 
-    to {opacity: 1}
+    from { opacity: .4; }
+    to { opacity: 1; }
 }
 
 /* Next & previous buttons */
@@ -237,7 +236,7 @@ main {
     color: white;
     font-weight: bold;
     font-size: 18px;
-    transition: 0.6s ease;
+    transition: background-color 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
 }
@@ -255,6 +254,7 @@ main {
 .prev:hover, .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
+
 /* 留言區塊設計 */
 #comments-section {
     margin-top: 50px;
@@ -330,137 +330,133 @@ main {
     background-color: #FFF;
     border: 1px solid #EEE;
     border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 10px rgba(0, 0,0, 0.05);
+    position: relative;
 }
 
-#comments-container .comment .comment-name {
+#comments-container .comment .author {
     font-weight: bold;
     color: #2C2C2C;
 }
 
-#comments-container .comment .comment-message {
+#comments-container .comment .timestamp {
+    font-size: 14px;
+    color: #999;
+}
+
+#comments-container .comment .content {
+    margin-top: 10px;
     font-size: 16px;
-    color: #5A5A5A;
-    margin-top: 5px;
-    line-height: 1.6;
+    color: #333;
 }
 
-/* 花籃捐贈區設計 */
-#donate-flower {
+#comments-container .comment .edit-button,
+#comments-container .comment .delete-button {
+    font-size: 14px;
+    color: #8B4513;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#comments-container .comment .edit-button:hover,
+#comments-container .comment .delete-button:hover {
+    color: #A0522D;
+}
+
+/* Flower basket section */
+.flower-basket-section {
+    text-align: center;
     margin-top: 50px;
-    padding: 20px;
-    background-color: #F8F8F8;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
-#donate-flower h2 {
-    font-family: 'Lora', serif;
+.flower-basket-section h2 {
     font-size: 24px;
     color: #2C2C2C;
-    text-align: center;
     margin-bottom: 20px;
 }
 
-#donate-flower .flower-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-#donate-flower .flower-list .flower-item {
-    width: calc(50% - 10px);
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-#donate-flower .flower-list .flower-item img {
-    width: 100%;
-    max-width: 200px;
+.flower-basket-section .flower-basket {
+    display: inline-block;
+    text-align: left;
+    background-color: #FFF;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin: 10px;
     transition: transform 0.3s ease;
 }
 
-#donate-flower .flower-list .flower-item img:hover {
+.flower-basket-section .flower-basket img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+.flower-basket-section .flower-basket p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #5A5A5A;
+}
+
+.flower-basket-section .flower-basket:hover {
     transform: scale(1.05);
 }
 
-#donate-flower .flower-list .flower-item p {
-    font-family: 'Merriweather', serif;
-    font-size: 16px;
-    color: #5A5A5A;
-    margin-top: 10px;
+/* 音樂設置 */
+audio {
+    display: none; /* 隱藏音樂控制 */
 }
 
-/* 底部設計 */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #FFF;
-    border-top: 1px solid #EDEDED;
-    font-family: 'CustomFont', Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    color: #8B4513;
-    letter-spacing: 0.5px;
-}
-
-footer p {
-    margin-bottom: 5px;
-}
-
-footer p a {
+/* 視覺效果及修正 */
+a {
     color: #8B4513;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-footer p a:hover {
+a:hover {
     color: #A0522D;
 }
 
-/* 響應式設計 */
-@media (max-width: 768px) {
-    main {
-        padding: 15px;
-    }
-
-    .main-photo-section img,
-    .paper-obituary-section img,
-    #donate-flower .flower-list .flower-item img {
-        max-width: 100%;
-    }
-
-    .VivaTimeline dd {
-        margin-left: 30px;
-    }
-
-    .VivaTimeline dd .circ {
-        left: -40px;
-    }
-
-    .VivaTimeline dd .time {
-        left: -65px;
-    }
-
-    #donate-flower .flower-list .flower-item {
-        width: 100%;
-    }
+/* 註釋區域的樣式 */
+.comment-section {
+    margin: 20px 0;
 }
 
-@media (max-width: 480px) {
-    header p {
-        font-size: 20px;
-    }
-
-    .motto {
-        font-size: 20px;
-    }
-
-    #comment-form button {
-        width: 100%;
-        padding: 15px;
-        font-size: 18px;
-    }
+.comment-section textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #DDD;
+    font-size: 16px;
+    margin-bottom: 10px;
+    resize: vertical;
 }
-   
+
+.comment-section button {
+    background-color: #8B4513;
+    color: #FFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.comment-section button:hover {
+    background-color: #A0522D;
+}
+
+/* 網頁底部設計 */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #FFF;
+    border-top: 1px solid #EDEDED;
+    font-family: 'CustomFont', Arial, Helvetica, sans-serif;
+}
+
+footer p {
+    font-size: 16px;
+    color: #5A5A5A;
+}
