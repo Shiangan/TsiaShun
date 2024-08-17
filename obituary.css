@@ -1,10 +1,3 @@
-/* 重設默認樣式 */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 /* 背景與字體樣式 */
 /* 字体引入 */
 @font-face {
