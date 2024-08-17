@@ -7,6 +7,14 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log("音樂自動播放被阻止:", error);
         });
     }
+    window.addEventListener('load', function() {
+        var audio = document.getElementById('background-music');
+        audio.volume = 0.5; // Adjust volume if necessary
+        audio.play().catch(function(error) {
+            console.log('Autoplay was prevented:', error);
+            // Optionally show a play button or message to users
+        });
+    });
 
     // 幻灯片功能
     let slideIndex = 0;
