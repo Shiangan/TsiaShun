@@ -4,6 +4,19 @@ document.addEventListener("DOMContentLoaded", function() {
     if (backgroundMusic) {
         backgroundMusic.play().catch(error => {
             console.log("音樂自動播放被阻止:", error);
+            // 提示用户手动播放音乐
+            const playButton = document.createElement('button');
+            playButton.innerText = "點擊播放音樂";
+            playButton.style.position = 'fixed';
+            playButton.style.top = '10px';
+            playButton.style.right = '10px';
+            playButton.style.zIndex = 1000;
+            document.body.appendChild(playButton);
+
+            playButton.addEventListener('click', function() {
+                backgroundMusic.play();
+                playButton.remove();
+            });
         });
     }
 
@@ -19,10 +32,21 @@ document.addEventListener("DOMContentLoaded", function() {
         if (name && message) {
             const newComment = document.createElement('div');
             newComment.classList.add('comment');
-            newComment.innerHTML = `<strong>${name}</strong><p>${message}</p>`;
+            newComment.innerHTML = `
+                <strong>${name}</strong>
+                <p>${message}</p>
+                <button class="delete-comment">刪除</button>
+            `;
 
             commentsContainer.appendChild(newComment);
             commentForm.reset(); // 重置表單
+
+            // 添加删除功能
+            newComment.querySelector('.delete-comment').addEventListener('click', function() {
+                newComment.remove();
+            });
+        } else {
+            alert("請填寫姓名和留言內容。");
         }
     });
 
@@ -32,5 +56,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     flowerBasketsButton.addEventListener('click', function() {
         flowerBasketGallery.style.display = 'flex';
+        flowerBasketGallery.scrollIntoView({ behavior: 'smooth' });
     });
 });
