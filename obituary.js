@@ -11,22 +11,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         }
-    // 背景音乐自动播放
-    const backgroundMusic = document.getElementById('background-music');
-    if (backgroundMusic) {
-        backgroundMusic.muted = false; // 确保音乐未被静音
-        backgroundMusic.play().catch(error => {
-            console.log("音樂自動播放被阻止:", error);
-        });
-    }
-    window.addEventListener('load', function() {
-        var audio = document.getElementById('background-music');
-        audio.volume = 0.5; // Adjust volume if necessary
-        audio.play().catch(function(error) {
-            console.log('Autoplay was prevented:', error);
-            // Optionally show a play button or message to users
-        });
+    
+    const audio = document.getElementById('background-music');
+    audio.muted = false; // 取消靜音
+    audio.play().catch(error => {
+        console.log('Autoplay was prevented:', error);
     });
+});
+</script>
 
     // 幻灯片功能
     let slideIndex = 0;
