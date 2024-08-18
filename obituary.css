@@ -615,3 +615,17 @@ form input[type="submit"]:hover {
     background-color: #A0522D;
     transform: scale(1.1);
 }
+
+footer {
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: #f8f9fa;
+}
+
+@media (max-width: 600px) {
+    footer {
+        padding: 5px;
+        font-size: 14px;
+    }
+}
