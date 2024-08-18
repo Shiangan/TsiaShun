@@ -616,6 +616,47 @@ form input[type="submit"]:hover {
     transform: scale(1.1);
 }
 
+    
+<style>
+  #share-section {
+    position: fixed;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+  }
+
+  .social-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .social-button img {
+    width: 40px;
+    height: 40px;
+  }
+</style>
+
+<section id="share-section">
+    <h2 class="visually-hidden">分享此頁面</h2>
+    <div class="social-buttons">
+        <!-- Facebook Share Button -->
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com"
+           target="_blank"
+           class="social-button facebook">
+            <img src="image/Facebook.png" alt="Facebook Share">
+        </a>
+
+        <!-- LINE Share Button -->
+        <a href="https://line.me/R/msg/text/?Check%20this%20out!%20https://yourwebsite.com"
+           target="_blank"
+           class="social-button line">
+            <img src="image/line.png" alt="LINE Share">
+        </a>
+    </div>
+</section>
+    
     /* 名片样式 /
 .card {
 max-width: 100%; / 保证名片大小适合页面宽度 */
