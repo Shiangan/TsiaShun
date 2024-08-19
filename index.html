@@ -12,16 +12,10 @@
 </head>
 <body>
     <!-- 背景音樂 -->
-    <audio id="background-music" loop>
+    <audio id="background-music" loop controls>
         <source src="audio/千風之歌.m4a" type="audio/m4a">
         您的瀏覽器不支援音訊播放。
     </audio>
-    <div class="music-controls">
-        <!-- 音樂控件 -->
-        <button onclick="document.getElementById('background-music').play()">🎵</button>
-        <button onclick="document.getElementById('background-music').pause()">🔇</button>
-        <input type="range" min="0" max="1" step="0.1" onchange="document.getElementById('background-music').volume = this.value" title="音量控制">
-    </div>
 
     <header>
         <img src="image/logo.png" alt="Logo" class="logo">
@@ -32,7 +26,7 @@
         <section class="main-photo-section">
             <img id="main-photo" src="image/主頁.JPG" alt="追思照片">
             <p id="life-story">
-                我們敬愛的親人，蔡順先生，於113年08月16日，安詳離世，護喪妻 吳昭   孝男 其煜 其鈞   孝女 韻瑾 韻琳 親視含殮，遵禮成服，設靈於 懷愛館（第二殯儀館）3F 蓮位堂［B1-02],設奠 113年09月01日 舉行追思會儀式。 感謝親友們的致意與陪伴，給予我們的父親，最深的祝福，銘記在心，衷心感謝。
+                我們敬愛的親人，蔡順先生，於113年08月16日，安詳離世，護喪妻 吳昭 孝男 其煜 其鈞 孝女 韻瑾 韻琳 親視含殮，遵禮成服，設靈於 懷愛館（第二殯儀館）3F 蓮位堂［B1-02],設奠 113年09月01日 舉行追思會儀式。 感謝親友們的致意與陪伴，給予我們的父親，最深的祝福，銘記在心，衷心感謝。
             </p>
         </section>
 
@@ -93,20 +87,6 @@
             </div>
         </section>
 
-        <section id="comments-section">
-            <h2>追思留言區</h2>
-            <form id="comment-form">
-                <label for="comment-name">姓名：</label>
-                <input type="text" id="comment-name" placeholder="你的名字" required>
-                <label for="comment-message">留言內容:</label>
-                <textarea id="comment-message" rows="4" placeholder="你的留言" required></textarea>
-                <button type="submit">提交留言</button>
-            </form>
-            <div id="comments-container">
-                <!-- 留言區內容將動態插入 -->
-            </div>
-        </section>
-
         <section id="donate-flower">
             <h2>致贈花籃</h2>
             <p>會場為求統一，一致性，致贈花籃，請點擊以下連結：</p>
@@ -147,12 +127,50 @@
                 </div>
             </div>
             <p><a href="https://line.me/ti/p/TuM5y_Of6I" target="_blank">送上一份最深切的祝福</a></p>
-            <p>為求會場一致，統一製作花籃<br>訂購花籃請點選<a href="https://line.me/                ti/p/TuM5y_Of6I" target="_blank">這裡</a>。</p>
+            <p>為求會場一致，統一製作花籃<br>訂購花籃請點選<a href="https://line.me/ti/p/TuM5y_Of6I" target="_blank">這裡</a>。</p>
         </section>
     </main>
 
     <footer>
-        <p>© 2024 訃聞公告網站 | 由<span class="footer-signature">您提供</span> | <a href="privacy-policy.html">隱私政策</a></p>
+        <p>© 2024 訃聞公告網站 | 由<span class="footer-signature">祥安生命有限公司</span> | <a href="privacy-policy.html">隱私政策</a></p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Slick Carousel
+            $('.slideshow-container').slick({
+                autoplay: true,
+                autoplaySpeed: 4000,
+                dots: true,
+                arrows: false
+            });
+
+                        // Timeline animation
+            function animateTimeline() {
+                const timelineBlocks = document.querySelectorAll(".VivaTimeline .event");
+                timelineBlocks.forEach(function (block) {
+                    const rect = block.getBoundingClientRect();
+                    if (rect.top <= window.innerHeight * 0.75 && rect.bottom >= 0) {
+                        block.classList.add("animated");
+                    } else {
+                        block.classList.remove("animated");
+                    }
+                });
+            }
+
+            // Update timeline animation on scroll
+            window.addEventListener('scroll', animateTimeline);
+            animateTimeline(); // Initial check
+
+            // Show flower baskets
+            const flowerBasketsButton = document.getElementById('show-flower-baskets');
+            const flowerBasketGallery = document.getElementById('flower-basket-gallery');
+
+            flowerBasketsButton.addEventListener('click', function() {
+                flowerBasketGallery.style.display = 'flex';
+                flowerBasketGallery.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
 </body>
 </html>
