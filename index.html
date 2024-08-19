@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>訃聞公告</title>
-    <link rel="stylesheet" href="obituary.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
-    <script src="obituary.js" defer></script>
 </head>
-<body>
+<body onload="playMusic()">
     <!-- 背景音樂 -->
-    <audio id="background-music" loop controls>
+    <audio id="background-music" loop>
         <source src="audio/千風之歌.m4a" type="audio/m4a">
         您的瀏覽器不支援音訊播放。
     </audio>
@@ -26,36 +25,35 @@
         <section class="main-photo-section">
             <img id="main-photo" src="image/主頁.JPG" alt="追思照片">
             <p id="life-story">
-                我們敬愛的親人，蔡順先生，於113年08月16日，安詳離世，護喪妻 吳昭 孝男 其煜 其鈞 孝女 韻瑾 韻琳 親視含殮，遵禮成服，設靈於 懷愛館（第二殯儀館）3F 蓮位堂［B1-02],設奠 113年09月01日 舉行追思會儀式。 感謝親友們的致意與陪伴，給予我們的父親，最深的祝福，銘記在心，衷心感謝。
+                <strong>我們敬愛的親人，蔡順先生，於113年08月16日，安詳離世。</strong> 
+                護喪妻 吳昭、孝男 其煜 其鈞、孝女 韻瑾 韻琳 親視含殮，遵禮成服，設靈於懷愛館（第二殯儀館）3F 蓮位堂［B1-02]，設奠於113年09月01日舉行追思會儀式。感謝親友們的致意與陪伴，給予我們的父親最深的祝福，銘記在心，衷心感謝。
             </p>
         </section>
 
-        <div class="motto">永遠懷念，我們摯愛的親人</div>
-
         <section class="paper-obituary-section">
-            <h2>訃告正本</h2>
+            <h2><strong>訃告正本</strong></h2>
             <a href="image/蔡順的訃聞.JPG" data-lightbox="paper-obituary" data-title="訃聞紙本">
                 <img id="paper-obituary" src="image/蔡順的訃聞.JPG" alt="訃聞紙本">
             </a>
         </section>
 
         <section id="timeline">
-            <h2>追思緬懷</h2>
+            <h2><strong>追思緬懷</strong></h2>
             <div class="VivaTimeline">
                 <dl>
-                    <dt>113.08.16 - 113.09.01</dt>
+                    <dt><strong>113.08.16 - 113.09.01</strong></dt>
                     <dd class="pos-right">
                         <div class="circ"></div>
                         <div class="time"></div>
                         <div class="event">
                             <div class="events-header"><strong>安靈期間</strong></div>
                             <div class="events-body">
-                                <p>蔡順先生 設立牌位於 懷愛館 3F 蓮位堂 [B1-02]</p>
+                                <p>蔡順先生設立牌位於懷愛館 3F 蓮位堂 [B1-02]</p>
                                 <p>此期間，親友可前往致意，與先生告別。</p>
                             </div>
                         </div>
                     </dd>
-                    <dt>113.09.01</dt>
+                    <dt><strong>113.09.01</strong></dt>
                     <dd class="pos-left">
                         <div class="circ"></div>
                         <div class="time"></div>
@@ -63,8 +61,8 @@
                             <div class="events-header"><strong>告別奠禮</strong></div>
                             <div class="events-body">
                                 <p>追思會：11：00</p>
-                                <p>儀式結束後，發引火化，安奉於金寶山寶塔</p>
-                                <p>出殯地點：懷愛館（第二殯儀館） 景行樓 3F [至仁四廳]</p>
+                                <p>儀式結束後，進行火化，骨灰安奉於金寶山寶塔</p>
+                                <p>出殯地點：<a href="https://goo.gl/maps/XXXXX" target="_blank"><strong>懷愛館（第二殯儀館）景行樓 3F [至仁四廳]</strong></a></p>
                             </div>
                         </div>
                     </dd>
@@ -73,7 +71,7 @@
         </section>
 
         <section id="slideshow">
-            <h2>追思相片集</h2>
+            <h2><strong>追思相片集</strong></h2>
             <div class="slideshow-container">
                 <div><img src="image/蔡順1.jpg" alt="照片1"></div>
                 <div><img src="image/蔡順2.jpg" alt="照片2"></div>
@@ -88,88 +86,78 @@
         </section>
 
         <section id="donate-flower">
-            <h2>致贈花籃</h2>
-            <p>會場為求統一，一致性，致贈花籃，請點擊以下連結：</p>
-            <a href="javascript:void(0);" id="show-flower-baskets" class="btn">致贈花籃</a>
+            <h2><strong>致贈花籃</strong></h2>
+            <p>為求會場一致性，致贈花籃請參見以下選項：</p>
+            <a href="javascript:void(0);" id="show-flower-baskets" class="btn"><strong>致贈花籃</strong></a>
             <div id="flower-basket-gallery" style="display: none;">
-                <!-- 花籃選項 -->
                 <div class="flower-basket-item">
                     <img src="image/花籃A.JPG" alt="花籃A">
-                    <p class="price">NT$2,500</p>
+                    <p class="price"><strong>NT$2,500</strong></p>
                 </div>
                 <div class="flower-basket-item">
                     <img src="image/花籃B.JPG" alt="花籃B">
-                    <p class="price">NT$3,000</p>
+                    <p class="price"><strong>NT$3,000</strong></p>
                 </div>
                 <div class="flower-basket-item">
                     <img src="image/花籃C.JPG" alt="花籃C">
-                    <p class="price">NT$3,500</p>
+                    <p class="price"><strong>NT$3,500</strong></p>
                 </div>
                 <div class="flower-basket-item">
                     <img src="image/花籃D.JPG" alt="花籃D">
-                    <p class="price">NT$4,000</p>
+                    <p class="price"><strong>NT$4,000</strong></p>
                 </div>
                 <div class="flower-basket-item">
                     <img src="image/花籃E.JPG" alt="花籃E">
-                    <p class="price">NT$5,000</p>
+                    <p class="price"><strong>NT$5,000</strong></p>
                 </div>
                 <div class="flower-basket-item">
                     <img src="image/花籃F.JPG" alt="花籃F">
-                    <p class="price">NT$5,500</p>
+                    <p class="price"><strong>NT$5,500</strong></p>
                 </div>
                 <div class="flower-basket-item">
                     <img src="image/花籃G.JPG" alt="花籃G">
-                    <p class="price">NT$6,000</p>
+                    <p class="price"><strong>NT$6,000</strong></p>
                 </div>
                 <div class="flower-basket-item">
                     <img src="image/花籃H.JPG" alt="花籃H">
-                    <p class="price">NT$6,500</p>
+                    <p class="price"><strong>NT$6,500</strong></p>
                 </div>
             </div>
-            <p><a href="https://line.me/ti/p/TuM5y_Of6I" target="_blank">送上一份最深切的祝福</a></p>
-            <p>為求會場一致，統一製作花籃<br>訂購花籃請點選<a href="https://line.me/ti/p/TuM5y_Of6I" target="_blank">這裡</a>。</p>
+            <p><a href="https://line.me/ti/p/TuM5y_Of6I" target="_blank"><strong>送上一份最深切的祝福</strong></a></p>
+            <p>為求會場一致，統一製作花籃<br>訂購花籃請點選<a href="https://line.me/ti/p/TuM5y_Of6I" target="_blank"><strong>這裡</strong></a>。</p>
         </section>
     </main>
 
     <footer>
-        <p>© 2024 訃聞公告網站 | 由<span class="footer-signature">祥安生命有限公司</span> | <a href="privacy-policy.html">隱私政策</a></p>
+        <p>© 2024 訃聞公告網站 | 由<span class="footer-signature">您提供</span> | <a href="privacy-policy.html" class="bold">隱私政策</a></p>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize Slick Carousel
-            $('.slideshow-container').slick({
-                autoplay: true,
-                autoplaySpeed: 4000,
-                dots: true,
-                arrows: false
+        function playMusic() {
+            const audio = document.getElementById('background-music');
+            audio.play().catch(error => {
+                console.log("音樂播放失敗:", error);
             });
+        }
 
-                        // Timeline animation
-            function animateTimeline() {
-                const timelineBlocks = document.querySelectorAll(".VivaTimeline .event");
-                timelineBlocks.forEach(function (block) {
-                    const rect = block.getBoundingClientRect();
-                    if (rect.top <= window.innerHeight * 0.75 && rect.bottom >= 0) {
-                        block.classList.add("animated");
-                    } else {
-                        block.classList.remove("animated");
-                    }
+        document.getElementById('show-flower-baskets').addEventListener('click', function() {
+            const gallery = document.getElementById('flower-basket-gallery');
+            gallery.style.display = gallery.style.display === 'none' ? 'block' : 'none        });
+
+        // 幻灯片功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slideshow-container > div');
+            let slideIndex = 0;
+
+            function showSlides() {
+                slides.forEach((slide, index) => {
+                    slide.style.display = index === slideIndex ? 'block' : 'none';
                 });
+                slideIndex = (slideIndex + 1) % slides.length;
+                setTimeout(showSlides, 4000); // 每4秒更换幻灯片
             }
 
-            // Update timeline animation on scroll
-            window.addEventListener('scroll', animateTimeline);
-            animateTimeline(); // Initial check
-
-            // Show flower baskets
-            const flowerBasketsButton = document.getElementById('show-flower-baskets');
-            const flowerBasketGallery = document.getElementById('flower-basket-gallery');
-
-            flowerBasketsButton.addEventListener('click', function() {
-                flowerBasketGallery.style.display = 'flex';
-                flowerBasketGallery.scrollIntoView({ behavior: 'smooth' });
-            });
+            showSlides();
         });
     </script>
 </body>
