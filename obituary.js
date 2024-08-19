@@ -12,14 +12,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Background music autoplay
+    // 音樂播放
     const audio = document.getElementById('background-music');
-    audio.muted = false; // Unmute audio
+    audio.muted = false; // 取消靜音
     audio.play().catch(error => {
         console.log('Autoplay was prevented:', error);
     });
 
-    // Slideshow functionality
+    // 幻灯片功能
     let slideIndex = 0;
     showSlides();
 
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
         slideIndex++;
         if (slideIndex > slides.length) { slideIndex = 1 }    
         slides[slideIndex-1].style.display = "block";  
-        setTimeout(showSlides, 4000); // Change slide every 4 seconds
+        setTimeout(showSlides, 4000); // 每4秒更换幻灯片
     }
 
     function plusSlides(n) {
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
         showSlides();
     }
 
-    // Comment board submission functionality
+    // 留言板提交功能
     const commentForm = document.getElementById('comment-form');
     const commentsContainer = document.getElementById('comments-container');
 
@@ -58,9 +58,9 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
 
             commentsContainer.appendChild(newComment);
-            commentForm.reset(); // Reset the form
+            commentForm.reset(); // 重置表单
 
-            // Add delete functionality
+            // 添加删除功能
             newComment.querySelector('.delete-comment').addEventListener('click', function() {
                 newComment.remove();
             });
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Flower basket display functionality
+    // 花篮展示功能
     const flowerBasketsButton = document.getElementById('show-flower-baskets');
     const flowerBasketGallery = document.getElementById('flower-basket-gallery');
 
@@ -77,8 +77,4 @@ document.addEventListener('DOMContentLoaded', function() {
         flowerBasketGallery.style.display = 'flex';
         flowerBasketGallery.scrollIntoView({ behavior: 'smooth' });
     });
-
-    // Timeline scroll animation trigger
-    window.addEventListener('scroll', animateTimeline);
-    animateTimeline(); // Initial call to animate on load
 });
