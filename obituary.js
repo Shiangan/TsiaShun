@@ -14,67 +14,49 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 音樂播放
     const audio = document.getElementById('background-music');
-    audio.muted = false; // 取消靜音
-    audio.play().catch(error => {
-        console.log('Autoplay was prevented:', error);
-    });
+    if (audio) {
+        audio.muted = false; // 取消靜音
+        audio.play().catch(error => {
+            console.log('Autoplay was prevented:', error);
+        });
+    }
 
     // 幻灯片功能
     let slideIndex = 0;
-    showSlides();
-
     function showSlides() {
-        let slides = document.getElementsByClassName("mySlides");
+        const slides = document.getElementsByClassName("mySlides");
         for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";  
+            slides[i].style.display = "none";
         }
         slideIndex++;
-        if (slideIndex > slides.length) { slideIndex = 1 }    
-        slides[slideIndex-1].style.display = "block";  
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+        slides[slideIndex - 1].style.display = "block";
         setTimeout(showSlides, 4000); // 每4秒更换幻灯片
     }
-
-    function plusSlides(n) {
-        slideIndex += n;
-        showSlides();
-    }
-
-    // 留言板提交功能
-    const commentForm = document.getElementById('comment-form');
-    const commentsContainer = document.getElementById('comments-container');
-
-    commentForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-        const name = document.getElementById('comment-name').value.trim();
-        const message = document.getElementById('comment-message').value.trim();
-
-        if (name && message) {
-            const newComment = document.createElement('div');
-            newComment.classList.add('comment');
-            newComment.innerHTML = `
-                <strong>${name}</strong> <span class="timestamp">${new Date().toLocaleString()}</span>
-                <p>${message}</p>
-                <button class="delete-comment">刪除</button>
-            `;
-
-            commentsContainer.appendChild(newComment);
-            commentForm.reset(); // 重置表单
-
-            // 添加删除功能
-            newComment.querySelector('.delete-comment').addEventListener('click', function() {
-                newComment.remove();
-            });
-        } else {
-            alert("請填寫姓名和留言內容。");
-        }
-    });
+    showSlides();
 
     // 花篮展示功能
     const flowerBasketsButton = document.getElementById('show-flower-baskets');
     const flowerBasketGallery = document.getElementById('flower-basket-gallery');
 
-    flowerBasketsButton.addEventListener('click', function() {
-        flowerBasketGallery.style.display = 'flex';
-        flowerBasketGallery.scrollIntoView({ behavior: 'smooth' });
-    });
+    if (flowerBasketsButton && flowerBasketGallery) {
+        flowerBasketsButton.addEventListener('click', function() {
+            flowerBasketGallery.style.display = 'flex';
+            flowerBasketGallery.scrollIntoView({ behavior: 'smooth' });
+        });
+    }
+
+    // 初始化动画
+    animateTimeline();
+    window.addEventListener('scroll', animateTimeline);
 });
+```
+
+### 主要优化点：
+1. **检查元素存在性**：在操作音频和按钮时，检查元素是否存在，避免在元素不存在时引发错误。
+2. **优化幻灯片功能**：简化了幻灯片的显示逻辑，将 `showSlides` 函数放到 `DOMContentLoaded` 事件处理器内部，确保在文档加载后立即执行。
+3. **删除留言板相关代码**：去掉了留言板相关的功能代码。
+
+这样可以确保页面加载更高效，且去除了留言板功能。
