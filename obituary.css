@@ -335,80 +335,100 @@ main {
 }
 
 #comments-container .comment .author {
-    #comments-container .comment .author {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 16px;
-    font-weight: bold;
-    color: #2C2C2C;
+    font-weight: bold;    color: #2C2C2C;
     margin-bottom: 5px;
 }
 
 #comments-container .comment .text {
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     color: #5A5A5A;
     line-height: 1.6;
+    margin-bottom: 10px;
+    text-align: justify;
 }
 
-#comments-container .comment .time {
-    font-size: 12px;
-    color: #8B4513;
+#comments-container .comment .timestamp {
+    font-size: 14px;
+    color: #A0A0A0;
+    margin-top: 10px;
+    text-align: right;
+}
+
+#comments-container .comment .actions {
     position: absolute;
     top: 10px;
     right: 10px;
+    display: flex;
+    gap: 10px;
 }
 
-#comments-container .comment .edit-btn,
-#comments-container .comment .delete-btn {
-    font-size: 12px;
-    color: #8B4513;
-    cursor: pointer;
-    text-decoration: underline;
-    margin-left: 10px;
-}
-
-#comments-container .comment .edit-btn:hover,
-#comments-container .comment .delete-btn:hover {
-    color: #A0522D;
-}
-
-/* 底部设计 */
-footer {
-    text-align: center;
-    padding: 20px 0;
-    background-color: #FFF;
-    border-top: 1px solid #EDEDED;
-}
-
-footer p {
-    font-family: 'CustomFont', Arial, sans-serif;
+#comments-container .comment .actions button {
     font-size: 14px;
-    color: #8B4513;
-    margin: 0;
-    line-height: 1.8;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #FFF;
+    background-color: #8B4513;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-/* 音乐播放器 */
-#background-music {
-    display: none; /* 隐藏音乐播放器 */
+#comments-container .comment .actions button:hover {
+    background-color: #A0522D;
 }
 
-/* 响应式设计 */
-@media screen and (max-width: 768px) {
-    main {
-        padding: 15px;
+#comments-container .comment .actions button.delete {
+    background-color: #B22222;
+}
+
+#comments-container .comment .actions button.delete:hover {
+    background-color: #CD5C5C;
+}
+
+/* 轮播指示点样式 */
+.dot-container {
+    text-align: center;
+    padding: 10px;
+    background-color: #FFF;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #D3D3D3;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    cursor: pointer;
+}
+
+.active, .dot:hover {
+    background-color: #8B4513;
+}
+
+/* 媒体查询：响应式设计 */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    header p {
+        font-size: 20px;
     }
 
     .main-photo-section img {
-        max-width: 100%;
+        max-width: 250px;
     }
 
     .paper-obituary-section img {
         max-width: 100%;
-    }
-
-    #timeline h2 {
-        font-size: 22px;
     }
 
     .VivaTimeline dt,
@@ -416,289 +436,58 @@ footer p {
         margin-left: 40px;
     }
 
-    .VivaTimeline dd .circ {
-        left: -40px;
-    }
-
     .VivaTimeline dd .time {
-        left: -65px;
+        left: -60px;
     }
 
-    .prev, .next {
-        font-size: 16px;
+    #comments-section {
+        padding: 15px;
     }
 
-    footer p {
-        font-size: 12px;
+    #comments-container .comment {
+        padding: 8px;
     }
 }
 
-/* 链接样式 */
-a {
-    color: #8B4513;
-    text-decoration: none;
-    transition: color 0.3s ease;
+/* 留言区块字体样式 */
+#comments-section, #comments-container .comment .text {
+    font-family: 'CustomFont', 'Merriweather', serif; /* 使用手写字体 */
 }
 
-a:hover {
-    color: #A0522D;
-}
-
-/* 表单样式 */
-form input[type="text"],
-form input[type="email"],
-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #DDDDDD;
-    border-radius: 4px;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 14px;
-    color: #333333;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-form input[type="text"]:focus,
-form input[type="email"]:focus,
-form textarea:focus {
-    border-color: #A0522D;
-    box-shadow: 0 0 5px rgba(160, 82, 45, 0.5);
-    outline: none;
-}
-
-form input[type="submit"] {
-    background-color: #8B4513;
-    color: #FFF;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    font-family: 'Source Sans Pro', sans-serif;
-    transition: background-color 0.3s ease;
-}
-
-form input[type="submit"]:hover {
-    background-color: #A0522D;
-}
-
-/* 表单容器 */
-.form-container {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #FFF;
-    border: 1px solid #EDEDED;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* 花籃區域 */
-.flower-section {
-    padding: 20px;
-    background-color: #FFF;
-    border-radius: 8px;
-    margin: 20px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.flower-section h2 {
-    font-family: 'CustomFont', Arial, sans-serif;
-    font-size: 22px;
-    color: #8B4513;
-    margin-bottom: 15px;
-}
-
-.flower-section .flower-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.flower-section .flower-item img {
-    width: 80px;
-    height: auto;
-    margin-right: 15px;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.flower-section .flower-item p {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 14px;
-    color: #333333;
-    margin: 0;
-}
-
-.flower-section .flower-item .price {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-    color: #8B4513;
-    margin-left: auto;
-}
-
-/* 演出部分 */
-.perform-section {
-    padding: 20px;
-    background-color: #FFF;
-    border-radius: 8px;
-    margin: 20px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.perform-section h2 {
-    font-family: 'CustomFont', Arial, sans-serif;
-    font-size: 22px;
-    color: #8B4513;
-    margin-bottom: 15px;
-}
-
-.perform-section p {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 14px;
-    color: #333333;
-    line-height: 1.8;
-}
-
-/* 小工具样式 */
-.widget {
-    padding: 15px;
-    background-color: #FFF;
-    border-radius: 8px;
-    margin: 15px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.widget h3 {
-    font-family: 'CustomFont', Arial, sans-serif;
-    font-size: 18px;
-    color: #8B4513;
-    margin-bottom: 10px;
-}
-
-.widget p {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 14px;
-    color: #333333;
-    line-height: 1.6;
-}
-
-/* 通知样式 */
-.notification {
-    padding: 15px;
-    background-color: #FFF3CD;
-    border: 1px solid #FFEEBA;
-    border-radius: 4px;
-    margin: 15px 0;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 14px;
-    color: #856404;
-}
-
-/* 浮动动作按钮 */
-.floating-action-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #8B4513;
-    color: #FFF;
-    padding: 15px;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.floating-action-button:hover {
-    background-color: #A0522D;
-    transform: scale(1.1);
-}
-
-    
-<style>
-  #share-section {
-    position: fixed;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1000;
-  }
-
-  .social-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .social-button img {
-    width: 40px;
-    height: 40px;
-  }
-</style>
-
-<section id="share-section">
-    <h2 class="visually-hidden">分享此頁面</h2>
-    <div class="social-buttons">
-        <!-- Facebook Share Button -->
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com"
-           target="_blank"
-           class="social-button facebook">
-            <img src="image/Facebook.png" alt="Facebook Share">
-        </a>
-
-        <!-- LINE Share Button -->
-        <a href="https://line.me/R/msg/text/?Check%20this%20out!%20https://yourwebsite.com"
-           target="_blank"
-           class="social-button line">
-            <img src="image/line.png" alt="LINE Share">
-        </a>
-    </div>
-</section>
-    
-    /* 名片样式 /
-.card {
-max-width: 100%; / 保证名片大小适合页面宽度 */
-padding: 15px;
-margin: 20px auto;
-background-color: #FFF;
-border-radius: 10px;
-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-text-align: center;
-font-family: ‘Lora’, serif;
-}
-
-.card h3 {
-font-size: 22px;
-color: #2C2C2C;
-margin-bottom: 10px;
-}
-
-.card p {
-font-size: 16px;
-color: #5A5A5A;
-margin-bottom: 5px;
-line-height: 1.6;
-}
-
-/* 名片图像 /
-.card img {
-max-width: 100%; / 确保图像适应名片大小 */
-border-radius: 10px;
-margin-bottom: 10px;
-}
-
+/* 页脚部分的样式 */
 footer {
-    max-width: 100%;
-    box-sizing: border-box;
-    padding: 10px;
-    background-color: #f8f9fa;
+    background-color: #f0f0f0; /* 设置页脚背景颜色 */
+    padding: 20px; /* 页脚内边距 */
+    text-align: center; /* 文本居中 */
+    font-family: 'CustomFont', 'Merriweather', serif; /* 使用手写字体 */
+    font-size: 14px; /* 字体大小 */
+    color: #5A5A5A; /* 字体颜色 */
+    border-top: 2px solid #8B4513; /* 页脚顶部的分割线 */
 }
 
-@media (max-width: 600px) {
+footer p {
+    margin: 0; /* 取消段落默认外边距 */
+}
+
+footer a {
+    color: #8B4513; /* 链接颜色 */
+    text-decoration: none; /* 去除下划线 */
+    transition: color 0.3s ease; /* 链接颜色渐变效果 */
+}
+
+footer a:hover {
+    color: #A0522D; /* 鼠标悬停时的链接颜色 */
+}
+
+/* 如果页脚有多行文本，行间距的设置 */
+footer p + p {
+    margin-top: 10px; /* 上一段落与下一段落的间距 */
+}
+
+/* 响应式设计：在小屏幕上的页脚样式 */
+@media (max-width: 768px) {
     footer {
-        padding: 5px;
-        font-size: 14px;
+        font-size: 12px; /* 小屏幕上字体稍小 */
+        padding: 15px; /* 内边距稍小 */
     }
 }
