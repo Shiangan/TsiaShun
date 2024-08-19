@@ -1,26 +1,25 @@
 document.addEventListener('DOMContentLoaded', function() {
-            // Timeline animation
-        function animateTimeline() {
-            const timelineBlocks = document.querySelectorAll(".VivaTimeline .event");
-            timelineBlocks.forEach(function (block) {
-                const rect = block.getBoundingClientRect();
-                if (rect.top <= window.innerHeight * 0.75 && rect.bottom >= 0) {
-                    block.classList.add("animated");
-                } else {
-                    block.classList.remove("animated");
-                }
-            });
-        }
-    
+    // Timeline animation
+    function animateTimeline() {
+        const timelineBlocks = document.querySelectorAll(".VivaTimeline .event");
+        timelineBlocks.forEach(function (block) {
+            const rect = block.getBoundingClientRect();
+            if (rect.top <= window.innerHeight * 0.75 && rect.bottom >= 0) {
+                block.classList.add("animated");
+            } else {
+                block.classList.remove("animated");
+            }
+        });
+    }
+
+    // Background music autoplay
     const audio = document.getElementById('background-music');
-    audio.muted = false; // 取消靜音
+    audio.muted = false; // Unmute audio
     audio.play().catch(error => {
         console.log('Autoplay was prevented:', error);
     });
-});
-</script>
 
-    // 幻灯片功能
+    // Slideshow functionality
     let slideIndex = 0;
     showSlides();
 
@@ -32,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
         slideIndex++;
         if (slideIndex > slides.length) { slideIndex = 1 }    
         slides[slideIndex-1].style.display = "block";  
-        setTimeout(showSlides, 4000); // 每4秒更换幻灯片
+        setTimeout(showSlides, 4000); // Change slide every 4 seconds
     }
 
     function plusSlides(n) {
@@ -40,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
         showSlides();
     }
 
-    // 留言板提交功能
+    // Comment board submission functionality
     const commentForm = document.getElementById('comment-form');
     const commentsContainer = document.getElementById('comments-container');
 
@@ -59,9 +58,9 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
 
             commentsContainer.appendChild(newComment);
-            commentForm.reset(); // 重置表单
+            commentForm.reset(); // Reset the form
 
-            // 添加删除功能
+            // Add delete functionality
             newComment.querySelector('.delete-comment').addEventListener('click', function() {
                 newComment.remove();
             });
@@ -70,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // 花篮展示功能
+    // Flower basket display functionality
     const flowerBasketsButton = document.getElementById('show-flower-baskets');
     const flowerBasketGallery = document.getElementById('flower-basket-gallery');
 
@@ -78,4 +77,8 @@ document.addEventListener('DOMContentLoaded', function() {
         flowerBasketGallery.style.display = 'flex';
         flowerBasketGallery.scrollIntoView({ behavior: 'smooth' });
     });
+
+    // Timeline scroll animation trigger
+    window.addEventListener('scroll', animateTimeline);
+    animateTimeline(); // Initial call to animate on load
 });
