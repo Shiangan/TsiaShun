@@ -456,32 +456,42 @@ main {
 
 /* 页脚部分的样式 */
 footer {
-    background-color: #f0f0f0; /* 设置页脚背景颜色 */
-    padding: 20px; /* 页脚内边距 */
-    text-align: center; /* 文本居中 */
-    font-family: 'CustomFont', 'Merriweather', serif; /* 使用手写字体 */
+    background-color: #f0f0f0; /* 页脚背景颜色 */
+    padding: 20px; /* 页脚的内边距 */
+    text-align: center; /* 文本居中对齐 */
+    font-family: 'CustomFont', 'Merriweather', serif; /* 使用手写字体和备用字体 */
     font-size: 14px; /* 字体大小 */
     color: #5A5A5A; /* 字体颜色 */
     border-top: 2px solid #8B4513; /* 页脚顶部的分割线 */
 }
 
 footer p {
-    margin: 0; /* 取消段落默认外边距 */
+    margin: 0; /* 移除段落的默认外边距 */
 }
 
 footer a {
     color: #8B4513; /* 链接颜色 */
-    text-decoration: none; /* 去除下划线 */
-    transition: color 0.3s ease; /* 链接颜色渐变效果 */
+    text-decoration: none; /* 去除链接下划线 */
+    transition: color 0.3s ease; /* 链接颜色的渐变效果 */
 }
 
 footer a:hover {
     color: #A0522D; /* 鼠标悬停时的链接颜色 */
 }
 
-/* 如果页脚有多行文本，行间距的设置 */
-footer p + p {
-    margin-top: 10px; /* 上一段落与下一段落的间距 */
+/* 页脚签名的特殊样式 */
+.footer-signature {
+    font-family: 'HandwrittenFont', 'Merriweather', serif; /* 使用手写字体 */
+    font-size: 16px; /* 字体大小 */
+    color: #8B4513; /* 字体颜色 */
+}
+
+/* 响应式设计：在小屏幕上的页脚样式 */
+@media (max-width: 768px) {
+    footer {
+        font-size: 12px; /* 小屏幕上的字体大小 */
+        padding: 15px; /* 内边距稍微缩小 */
+    }
 }
 
 /* 响应式设计：在小屏幕上的页脚样式 */
