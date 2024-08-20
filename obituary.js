@@ -44,7 +44,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     const fadeInTexts = document.querySelectorAll('.fade-in-text');
-
     fadeInTexts.forEach((text, index) => {
         setTimeout(() => {
             text.style.opacity = '1';
@@ -69,19 +68,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    const fadeInTexts = document.querySelectorAll('.fade-in-text');
-
-    fadeInTexts.forEach((text, index) => {
-        setTimeout(() => {
-            text.style.opacity = '1';
-        }, index * 1500); // 每个段落延迟1.5秒逐个渐显
-    });
-});
-
     // 初始化动画
     animateTimeline();
     window.addEventListener('scroll', animateTimeline);
 });
 
-#
+
 
