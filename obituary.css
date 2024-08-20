@@ -419,10 +419,7 @@ main {
     font-size: 18px; /* 增大价格字体 */
     color: #8B4513; /* 价格字体颜色 */
     font-weight: bold; /* 使价格加粗 */
-    margin-top: 10px; /* 保持价格与图片的间距 */
-}
-
-/* 页脚部分的样式 */
+    margin-top: 10px; /* 保持价格与图片的/* 页脚部分的样式 */
 footer {
     background-color: #f0f0f0; /* 页脚背景颜色 */
     padding: 20px; /* 页脚的内边距 */
