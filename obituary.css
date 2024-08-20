@@ -89,6 +89,12 @@ body {
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* 渐显动画效果 */
+.fade-in-text {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
 
 
 /* 追思相片集设计 */
@@ -150,6 +156,13 @@ body {
         max-width: 100%;
     }
 }
+
+/* 渐显动画效果 */
+.fade-in-text {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
 /* 页眉设计 */
 header {
     text-align: center;
