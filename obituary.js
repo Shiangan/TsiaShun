@@ -12,13 +12,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // 自动播放背景音乐
-    const audio = document.getElementById('background-music');
-    if (audio) {
-        audio.play().catch(error => {
-            console.log('Autoplay was prevented:', error);
-        });
-    }
+    // 背景音樂自動播放
+            const backgroundMusic = document.getElementById("background-music");
+            if (backgroundMusic) {
+                backgroundMusic.play().catch(error => {
+                    console.warn("自動播放被阻止:", error);
+                    document.addEventListener("click", () => {
+                        backgroundMusic.play().catch(err => console.warn("点击后播放失败:", err));
+                    }, { once: true });
+                });
+            }
+
 
     // 幻灯片功能
     let slideIndex = 0;
