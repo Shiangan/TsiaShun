@@ -36,6 +36,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     showSlides();
 
+
+    const fadeInTexts = document.querySelectorAll('.fade-in-text');
+
+    fadeInTexts.forEach((text, index) => {
+        setTimeout(() => {
+            text.style.opacity = '1';
+        }, index * 1500); // 每个段落延迟1.5秒逐个渐显
+    });
+});
+
     // 花篮展示功能
     const flowerBasketsButton = document.getElementById('show-flower-baskets');
     const flowerBasketGallery = document.getElementById('flower-basket-gallery');
