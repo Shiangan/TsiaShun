@@ -12,6 +12,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+   /* 渐显动画效果 */
+.fade-in-text {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+} 
+
     // 自动播放背景音乐
     const audio = document.getElementById('background-music');
     if (audio) {
