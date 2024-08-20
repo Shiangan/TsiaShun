@@ -57,15 +57,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    const fadeInTexts = document.querySelectorAll('.fade-in-text');
+
+    fadeInTexts.forEach((text, index) => {
+        setTimeout(() => {
+            text.style.opacity = '1';
+        }, index * 1500); // 每个段落延迟1.5秒逐个渐显
+    });
+});
+
     // 初始化动画
     animateTimeline();
     window.addEventListener('scroll', animateTimeline);
 });
-```
 
-### 主要优化点：
-1. **检查元素存在性**：在操作音频和按钮时，检查元素是否存在，避免在元素不存在时引发错误。
-2. **优化幻灯片功能**：简化了幻灯片的显示逻辑，将 `showSlides` 函数放到 `DOMContentLoaded` 事件处理器内部，确保在文档加载后立即执行。
-3. **删除留言板相关代码**：去掉了留言板相关的功能代码。
+#
 
-这样可以确保页面加载更高效，且去除了留言板功能。
