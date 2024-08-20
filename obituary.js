@@ -12,12 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-   /* 渐显动画效果 */
-.fade-in-text {
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-} 
-
     // 自动播放背景音乐
     const audio = document.getElementById('background-music');
     if (audio) {
@@ -42,20 +36,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     showSlides();
 
-
+    // 渐显动画效果
     const fadeInTexts = document.querySelectorAll('.fade-in-text');
     fadeInTexts.forEach((text, index) => {
         setTimeout(() => {
             text.style.opacity = '1';
         }, index * 1500); // 每个段落延迟1.5秒逐个渐显
     });
-});
-
-    let fadeInText = document.querySelectorAll('.fade-in-text');
-    fadeInText.forEach(function(element) {
-        element.style.opacity = 1;
-    });
-});
 
     // 花篮展示功能
     const flowerBasketsButton = document.getElementById('show-flower-baskets');
@@ -72,6 +59,3 @@ document.addEventListener('DOMContentLoaded', function() {
     animateTimeline();
     window.addEventListener('scroll', animateTimeline);
 });
-
-
-
