@@ -319,24 +319,38 @@ main {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* 花篮图片区域设计 */
-.basket-photo-section {
-    text-align: center;
-    margin-bottom: 20px;
+/* 花籃展示区设计 */
+#flower-basket-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* 图片之间的间距 */
+    justify-content: center; /* 居中排列 */
+    margin-top: 20px;
 }
 
-.basket-photo-section img {
-    width: 100%;
-    max-width: 400px; /* 设置最大宽度 */
-    height: auto; /* 确保高度自动调整 */
+.flower-basket-item {
+    max-width: 220px; /* 控制单个花篮图片项的最大宽度 */
+    text-align: center;
+    margin-bottom: 20px; /* 图片项之间的间距 */
+}
+
+.flower-basket-item img {
+    width: 100%; /* 图片自适应容器宽度 */
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    object-fit: cover; /* 确保图片在容器内的显示效果 */
     transition: transform 0.3s ease;
+    margin-bottom: 10px; /* 图片与价格之间的间距 */
 }
 
-.basket-photo-section img:hover {
+.flower-basket-item img:hover {
     transform: scale(1.05);
+}
+
+.flower-basket-item .price {
+    font-size: 18px; /* 增大价格字体 */
+    color: #8B4513; /* 价格字体颜色 */
+    font-weight: bold; /* 使价格加粗 */
+    margin-top: 10px; /* 保持价格与图片的间距 */
 }
 
 /* 页脚部分的样式 */
