@@ -12,10 +12,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // 音樂播放
+    // 自动播放背景音乐
     const audio = document.getElementById('background-music');
     if (audio) {
-        audio.muted = false; // 取消靜音
         audio.play().catch(error => {
             console.log('Autoplay was prevented:', error);
         });
