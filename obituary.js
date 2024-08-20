@@ -52,6 +52,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+    let fadeInText = document.querySelectorAll('.fade-in-text');
+    fadeInText.forEach(function(element) {
+        element.style.opacity = 1;
+    });
+});
+
     // 花篮展示功能
     const flowerBasketsButton = document.getElementById('show-flower-baskets');
     const flowerBasketGallery = document.getElementById('flower-basket-gallery');
